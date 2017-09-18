@@ -1,0 +1,15 @@
+{
+  "extends": ["airbnb"],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    "import/prefer-default-export": 0,
+    "react/no-array-index-key": 0
+  },
+  "globals": {
+    "React": true,
+    "document": true,
+    "WebSocket": true
+  }
+}
