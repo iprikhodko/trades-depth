@@ -20,6 +20,8 @@ $blue: #123a64;
   font-size: 12px;
 }
 
+@include table-row-variant(hovered, rgba(0, 0, 0, 0.025));
+
 .table.table-th-uppercase {
   text-transform: uppercase;
 }
@@ -30,4 +32,11 @@ $blue: #123a64;
 
 .bid {
   color: $blue;
+}
+
+.popover {
+  position: static;
+  padding: .5em 1em;
+  background: black;
+  color: white;
 }

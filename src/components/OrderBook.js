@@ -1,11 +1,9 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import OrderTable from './OrderTable';
+import OrderTable from '../containers/OrderTable';
 
 class OrderBook extends PureComponent {
   static propTypes = {
-    buyOrders: PropTypes.array.isRequired,
-    sellOrders: PropTypes.array.isRequired,
     isListOverflow: PropTypes.bool.isRequired,
     isListExpanded: PropTypes.bool.isRequired,
     onToggleExpand: PropTypes.func.isRequired,
@@ -13,8 +11,6 @@ class OrderBook extends PureComponent {
 
   render() {
     const {
-      buyOrders,
-      sellOrders,
       isListOverflow,
       isListExpanded,
       onToggleExpand,
@@ -25,16 +21,16 @@ class OrderBook extends PureComponent {
         <h3 className="h3 font-weight-normal">Orderbook</h3>
         <div className="row">
           <OrderTable
+            id="buyOrders"
             className="col-sm-6"
             titleClassName="bid"
             title="bid (buy orders)"
-            data={buyOrders}
           />
           <OrderTable
+            id="sellOrders"
             className="col-sm-6"
             titleClassName="ask"
             title="ask (sell orders)"
-            data={sellOrders}
           />
         </div>
         {isListOverflow && <div className="text-center">
